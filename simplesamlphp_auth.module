@@ -288,6 +288,12 @@ function simplesamlphp_auth_init() {
           $edit = array();
           user_login_finalize($edit);
 
+          // user_login_finalize() rebuilds the session too late in the current
+          // process so we have to redirect to the desired page for the session
+          // to be complete.
+          $params = drupal_get_query_parameters();
+          drupal_goto(current_path(), array('query' => $params));
+
       } // End if !empty authname.
     } // End if isset saml_session.
   }

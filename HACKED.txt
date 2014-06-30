@@ -1,3 +1,8 @@
 The system in this module for adding roles is awful so there is a line that does the following
 
 $userinfo['roles'] = acexpert_control_map_user_data($ext_user);
+
+
+We also apply patch #15 from https://www.drupal.org/node/1922694 to avoid "Access denied" when a user logs in.
+
+This redirects immediately after login to ensure the authenticated user session is always available.
