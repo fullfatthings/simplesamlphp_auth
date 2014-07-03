@@ -179,7 +179,9 @@ function simplesamlphp_auth_loginpage() {
       drupal_goto(str_replace($base_url . '/', '', $gotourl));
     }
     else {
-      drupal_goto('user/' . $user->uid);
+      // FFT hack: send already logged in users to the homepage instead of the user page
+      drupal_goto();
+      // drupal_goto('user/' . $user->uid);
     }
 
   }
