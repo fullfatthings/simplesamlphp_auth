@@ -247,7 +247,7 @@ function simplesamlphp_auth_init() {
           drupal_alter('simplesamlphp_auth_addauthmaps', $existing_user, $context);
           if (!empty($existing_user)) {
 
-            user_set_authmaps($existing_user, array('authname_simplesamlphp_auth' => $existing_user->name));
+            user_set_authmaps($existing_user, array('authname_simplesamlphp_auth' => $authname));
             $ext_user = $existing_user;
           }
         }
