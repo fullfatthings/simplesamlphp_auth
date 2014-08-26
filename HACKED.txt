@@ -6,3 +6,9 @@ $userinfo['roles'] = acexpert_control_map_user_data($ext_user);
 We also apply patch #15 from https://www.drupal.org/node/1922694 to avoid "Access denied" when a user logs in.
 
 This redirects immediately after login to ensure the authenticated user session is always available.
+
+also
+
+simplesamlphp_auth-create-authmap-entries-1280930-29.patch
+and a couple of fixes.
+To allow for exsisting users to log in if they have an email address on the system.
