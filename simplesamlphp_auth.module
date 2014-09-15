@@ -232,13 +232,7 @@ function simplesamlphp_auth_init() {
 
         // Retrieve user mapping and attempt to log the user in.
         $ext_user = user_external_load($authname);
-<<<<<<< HEAD
         $skip_user_finalization = FALSE;
-
-        if (!$ext_user) {
-          // First we check the admin settings for simpleSAMLphp and find out if we are allowed to register users.
-          if (variable_get('simplesamlphp_auth_registerusers', TRUE)) {
-=======
 
         // Add authmaps on the fly for manually created users.
         if (empty($ext_user) && variable_get('simplesamlphp_auth_addauthmaps', TRUE)) {
